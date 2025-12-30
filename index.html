@@ -48,8 +48,8 @@
       margin-bottom:28px;
     }
 
-    .menu button,
-    .menu a{
+    .menu a,
+    .menu button{
       background:transparent;
       border:0;
       padding:8px 10px;
@@ -124,7 +124,8 @@
 
   <!-- MENU -->
   <div class="menu">
-    <!-- 外部リンク（下は切り替わらない） -->
+
+    <!-- 外部リンク（独立項目） -->
     <a href="https://ondesmarinesrecords.bandcamp.com/music"
        target="_blank" rel="noopener">
       BANDCAMP
@@ -132,7 +133,7 @@
 
     <a href="https://medium.com/@gongdeyuri364"
        target="_blank" rel="noopener">
-      MEDIUM
+      BLOG
     </a>
 
     <a href="https://linktr.ee/Yuriafasia"
@@ -140,47 +141,19 @@
       LINKTREE
     </a>
 
-    <!-- 内部切り替え -->
-    <button class="active" data-target="music">MUSIC</button>
-    <button data-target="events">EVENTS</button>
-    <button data-target="artists">ARTISTS</button>
-    <button data-target="videos">VIDEOS</button>
+    <a href="https://medium.com/@gongdeyuri364/music-501860495488"
+       target="_blank" rel="noopener">
+      MUSIC
+    </a>
+
+    <!-- ページ内切り替え -->
+    <button class="active" data-target="videos">VIDEOS</button>
     <button data-target="about">ABOUT</button>
     <button data-target="contact">CONTACT</button>
   </div>
 
-  <!-- MUSIC -->
-  <div id="music" class="section active">
-    <div class="box">
-      <p>
-        Music releases and listening links are updated on Medium.
-      </p>
-      <p>
-        Please visit the Music Catalog on Medium.
-      </p>
-    </div>
-  </div>
-
-  <!-- EVENTS -->
-  <div id="events" class="section">
-    <div class="box">
-      <p>
-        Events, news, and milestones are archived on Medium.
-      </p>
-    </div>
-  </div>
-
-  <!-- ARTISTS -->
-  <div id="artists" class="section">
-    <div class="box">
-      <p>
-        Artists associated with Ondesmarines Records.
-      </p>
-    </div>
-  </div>
-
   <!-- VIDEOS -->
-  <div id="videos" class="section">
+  <div id="videos" class="section active">
     <div class="box">
       <div class="video-grid">
         <iframe src="https://www.youtube.com/embed/9CQuINf9IKo" loading="lazy" allowfullscreen></iframe>
