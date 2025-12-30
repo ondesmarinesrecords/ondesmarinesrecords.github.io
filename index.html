@@ -48,7 +48,8 @@
       margin-bottom:28px;
     }
 
-    .menu button{
+    .menu button,
+    .menu a{
       background:transparent;
       border:0;
       padding:8px 10px;
@@ -57,9 +58,14 @@
       border-bottom:2px solid rgba(34,34,34,.35);
       cursor:pointer;
       color:#222;
+      text-decoration:none;
     }
 
     .menu button.active{
+      border-bottom-color:#222;
+    }
+
+    .menu a:hover{
       border-bottom-color:#222;
     }
 
@@ -79,29 +85,6 @@
       border-radius:14px;
       padding:20px;
       line-height:1.7;
-    }
-
-    /* text links */
-    .link-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-
-    .link-list li{
-      margin:12px 0;
-      font-size:18px;
-    }
-
-    .link-list a{
-      color:#222;
-      text-decoration:none;
-      border-bottom:1px solid rgba(34,34,34,.4);
-      padding-bottom:2px;
-    }
-
-    .link-list a:hover{
-      border-bottom-color:#222;
     }
 
     /* video grid */
@@ -141,8 +124,24 @@
 
   <!-- MENU -->
   <div class="menu">
-    <button class="active" data-target="links">LINKS</button>
-    <button data-target="music">MUSIC</button>
+    <!-- 外部リンク（下は切り替わらない） -->
+    <a href="https://ondesmarinesrecords.bandcamp.com/music"
+       target="_blank" rel="noopener">
+      BANDCAMP
+    </a>
+
+    <a href="https://medium.com/@gongdeyuri364"
+       target="_blank" rel="noopener">
+      MEDIUM
+    </a>
+
+    <a href="https://linktr.ee/Yuriafasia"
+       target="_blank" rel="noopener">
+      LINKTREE
+    </a>
+
+    <!-- 内部切り替え -->
+    <button class="active" data-target="music">MUSIC</button>
     <button data-target="events">EVENTS</button>
     <button data-target="artists">ARTISTS</button>
     <button data-target="videos">VIDEOS</button>
@@ -150,71 +149,33 @@
     <button data-target="contact">CONTACT</button>
   </div>
 
-  <!-- LINKS -->
-  <div id="links" class="section active">
-    <div class="box">
-      <ul class="link-list">
-        <li>
-          <a href="https://ondesmarinesrecords.bandcamp.com/music"
-             target="_blank" rel="noopener">
-            Bandcamp
-          </a>
-        </li>
-        <li>
-          <a href="https://medium.com/@gongdeyuri364"
-             target="_blank" rel="noopener">
-            Medium (Blog)
-          </a>
-        </li>
-        <li>
-          <a href="https://linktr.ee/Yuriafasia"
-             target="_blank" rel="noopener">
-            Linktree
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
   <!-- MUSIC -->
-  <div id="music" class="section">
+  <div id="music" class="section active">
     <div class="box">
-      <ul class="link-list">
-        <li>
-          <a href="YOUR_MUSIC_MEDIUM_URL"
-             target="_blank" rel="noopener">
-            Music Catalog (Medium)
-          </a>
-        </li>
-      </ul>
+      <p>
+        Music releases and listening links are updated on Medium.
+      </p>
+      <p>
+        Please visit the Music Catalog on Medium.
+      </p>
     </div>
   </div>
 
   <!-- EVENTS -->
   <div id="events" class="section">
     <div class="box">
-      <ul class="link-list">
-        <li>
-          <a href="YOUR_EVENTS_MEDIUM_URL"
-             target="_blank" rel="noopener">
-            Events / News (Medium)
-          </a>
-        </li>
-      </ul>
+      <p>
+        Events, news, and milestones are archived on Medium.
+      </p>
     </div>
   </div>
 
   <!-- ARTISTS -->
   <div id="artists" class="section">
     <div class="box">
-      <ul class="link-list">
-        <li>
-          <a href="https://medium.com/@gongdeyuri364/artists-05ffca4c1158"
-             target="_blank" rel="noopener">
-            Artists (Medium)
-          </a>
-        </li>
-      </ul>
+      <p>
+        Artists associated with Ondesmarines Records.
+      </p>
     </div>
   </div>
 
@@ -235,11 +196,8 @@
     <div class="box">
       <p><strong>Ondesmarines Records</strong> began as the personal label of the artist Yuri Afasia.</p>
       <p>
-        Over time, it has grown into a platform for collaborative works and compilation releases,
-        creating a space where diverse creative voices can meet and resonate.
-      </p>
-      <p>
-        It exists to protect creative freedom and allow music to remain fluid and sincere.
+        It has grown into a platform for collaborative works and compilation releases,
+        respecting creative freedom and fluid expression.
       </p>
     </div>
   </div>
@@ -247,14 +205,12 @@
   <!-- CONTACT -->
   <div id="contact" class="section">
     <div class="box">
-      <ul class="link-list">
-        <li>
-          <a href="mailto:gongdeyuri364@gmail.com"
-             target="_blank" rel="noopener">
-            gongdeyuri364@gmail.com
-          </a>
-        </li>
-      </ul>
+      <p>
+        <a href="mailto:gongdeyuri364@gmail.com"
+           target="_blank" rel="noopener">
+          gongdeyuri364@gmail.com
+        </a>
+      </p>
     </div>
   </div>
 
