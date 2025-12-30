@@ -12,45 +12,74 @@
       background-color:#e6f6ff;
       color:#222;
     }
+
     .wrap{
       max-width:720px;
       margin:0 auto;
       padding:48px 24px;
       text-align:center;
     }
+
     img.logo{
       max-width:260px;
       height:auto;
-      margin-bottom:24px;
+      margin:0 auto 24px;
       display:block;
-      margin-left:auto;
-      margin-right:auto;
+    }
+
+    h1{
+      font-size:36px;
+      margin:0 0 10px;
+    }
+
+    p.tagline{
+      font-size:16px;
+      margin:0 0 26px;
+      opacity:.85;
+      line-height:1.5;
     }
 
     /* menu */
     .menu{
       display:flex;
-      gap:12px;
+      gap:14px;
       flex-wrap:wrap;
       justify-content:center;
-      margin: 0 0 26px;
+      margin-bottom:28px;
     }
+
     .menu button{
       background:transparent;
       border:0;
-      padding:10px 10px;
+      padding:8px 10px;
       font-size:16px;
-      letter-spacing:0.06em;
-      border-bottom:2px solid rgba(34,34,34,0.35);
+      letter-spacing:.08em;
+      border-bottom:2px solid rgba(34,34,34,.35);
       cursor:pointer;
       color:#222;
     }
+
     .menu button.active{
       border-bottom-color:#222;
     }
 
-    h1{font-size:36px;margin:0 0 10px;}
-    p.tagline{font-size:16px;margin:0 0 22px;opacity:.85;line-height:1.5;}
+    /* sections */
+    .section{
+      display:none;
+      text-align:left;
+    }
+
+    .section.active{
+      display:block;
+    }
+
+    .box{
+      border:1px solid rgba(34,34,34,.18);
+      background:rgba(255,255,255,.65);
+      border-radius:14px;
+      padding:20px;
+      line-height:1.6;
+    }
 
     /* buttons */
     a.button{
@@ -62,37 +91,57 @@
       border-radius:12px;
       font-size:18px;
       color:#222;
-      background:rgba(255,255,255,0.75);
-    }
-    a.button:hover{background:rgba(255,255,255,0.95);}
-
-    /* sections */
-    .section{ display:none; text-align:left; }
-    .section.active{ display:block; }
-    .section .box{
-      border:1px solid rgba(34,34,34,0.18);
-      background:rgba(255,255,255,0.65);
-      border-radius:14px;
-      padding:18px;
+      background:rgba(255,255,255,.75);
+      text-align:center;
     }
 
-    .contact{margin-top:28px;font-size:14px;text-align:center;}
-    .contact a{color:#222;text-decoration:underline;}
-    footer{margin-top:42px;font-size:12px;opacity:.6;text-align:center;}
+    a.button:hover{
+      background:rgba(255,255,255,.95);
+    }
+
+    /* video grid */
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+    }
+
+    .video-grid iframe{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      border-radius:12px;
+      background:#000;
+    }
+
+    .contact{
+      text-align:center;
+      margin-top:10px;
+      font-size:14px;
+    }
+
+    footer{
+      margin-top:42px;
+      font-size:12px;
+      opacity:.6;
+      text-align:center;
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+
     <img src="ondesmarines_logo.png" alt="Ondesmarines Records" class="logo" />
 
     <h1>Ondesmarines Records</h1>
+
     <p class="tagline">
       A single current platform hosting multiple artists, curated by Yuri Afasia.
     </p>
 
-    <!-- Menu (no page jump) -->
-    <div class="menu" role="tablist" aria-label="Site menu">
+    <!-- MENU -->
+    <div class="menu">
       <button class="active" data-target="links">LINKS</button>
       <button data-target="artists">ARTISTS</button>
       <button data-target="videos">VIDEOS</button>
@@ -100,7 +149,7 @@
       <button data-target="contact">CONTACT</button>
     </div>
 
-    <!-- Sections (content swaps below) -->
+    <!-- LINKS -->
     <div id="links" class="section active">
       <div class="box">
         <a class="button" href="https://ondesmarinesrecords.bandcamp.com/music" target="_blank" rel="noopener">Bandcamp</a>
@@ -109,59 +158,78 @@
       </div>
     </div>
 
+    <!-- ARTISTS -->
     <div id="artists" class="section">
       <div class="box">
-        <p style="margin-top:0;">Artists page (opens in a new tab):</p>
         <a class="button" href="https://medium.com/@gongdeyuri364/artists-05ffca4c1158" target="_blank" rel="noopener">
           Artists (Medium)
         </a>
-        <p style="opacity:.8; margin-bottom:0;">
-          Later, we can replace this with your own artist cards (photos + short bios) inside this page.
-        </p>
       </div>
     </div>
 
+    <!-- VIDEOS -->
     <div id="videos" class="section">
       <div class="box">
-        <p style="margin-top:0;">Put your video links here.</p>
-        <a class="button" href="#" onclick="return false;">YouTube (coming soon)</a>
-        <p style="opacity:.8; margin-bottom:0;">
-          If you send me your channel/playlist links, I can format them as a clean list that “flows” like the site you showed.
-        </p>
+        <div class="video-grid">
+          <iframe src="https://www.youtube.com/embed/9CQuINf9IKo" loading="lazy" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/8A2F9t785B0" loading="lazy" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/0RS6wMJyDog" loading="lazy" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/B4IH6FjlqK8" loading="lazy" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
 
+    <!-- ABOUT -->
     <div id="about" class="section">
       <div class="box">
-        <p style="margin-top:0;">
-          Write your presence here—short, clear, and inevitable.
+        <p><strong>Ondesmarines Records</strong> began as the personal label of the artist Yuri Afasia.</p>
+
+        <p>
+          Over time, it has grown into a platform for collaborative works and compilation releases,
+          creating a space where diverse creative voices can meet and resonate.
+        </p>
+
+        <p>
+          The label exists not to control or define creativity, but to protect and respect artists’
+          freedom. It serves as a framework that allows creation to remain open, fluid, and sincere.
+        </p>
+
+        <p>
+          Active since 2015, Ondesmarines Records engages in artistic projects and showcase
+          performances across multiple formats and mediums.
+        </p>
+
+        <p>
+          It is not confined by genre or form.<br>
+          It moves where creativity flows.
         </p>
       </div>
     </div>
 
+    <!-- CONTACT -->
     <div id="contact" class="section">
-      <div class="box" style="text-align:center;">
+      <div class="box">
         <div class="contact">
-          Contact: <a href="mailto:gongdeyuri364@gmail.com">gongdeyuri364@gmail.com</a>
+          <a href="mailto:gongdeyuri364@gmail.com">gongdeyuri364@gmail.com</a>
         </div>
       </div>
     </div>
 
     <footer>© Ondesmarines Records</footer>
+
   </div>
 
   <script>
     const buttons = document.querySelectorAll(".menu button");
     const sections = document.querySelectorAll(".section");
 
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+    buttons.forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        buttons.forEach(b=>b.classList.remove("active"));
+        sections.forEach(s=>s.classList.remove("active"));
 
-        const targetId = btn.dataset.target;
-        sections.forEach(sec => sec.classList.remove("active"));
-        document.getElementById(targetId).classList.add("active");
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.target).classList.add("active");
       });
     });
   </script>
