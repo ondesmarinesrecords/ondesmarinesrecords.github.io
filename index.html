@@ -6,114 +6,164 @@
   <title>Ondesmarines Records</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      background-color: #e6f6ff; /* light blue */
-      color: #222;
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background-color:#e6f6ff;
+      color:#222;
+    }
+    .wrap{
+      max-width:720px;
+      margin:0 auto;
+      padding:48px 24px;
+      text-align:center;
+    }
+    img.logo{
+      max-width:260px;
+      height:auto;
+      margin-bottom:24px;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
     }
 
-    .wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px;
-      text-align: center;
+    /* menu */
+    .menu{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin: 0 0 26px;
+    }
+    .menu button{
+      background:transparent;
+      border:0;
+      padding:10px 10px;
+      font-size:16px;
+      letter-spacing:0.06em;
+      border-bottom:2px solid rgba(34,34,34,0.35);
+      cursor:pointer;
+      color:#222;
+    }
+    .menu button.active{
+      border-bottom-color:#222;
     }
 
-    img.logo {
-      max-width: 260px;
-      height: auto;
-      margin-bottom: 32px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+    h1{font-size:36px;margin:0 0 10px;}
+    p.tagline{font-size:16px;margin:0 0 22px;opacity:.85;line-height:1.5;}
+
+    /* buttons */
+    a.button{
+      display:block;
+      text-decoration:none;
+      border:2px solid #222;
+      padding:16px;
+      margin:16px 0;
+      border-radius:12px;
+      font-size:18px;
+      color:#222;
+      background:rgba(255,255,255,0.75);
+    }
+    a.button:hover{background:rgba(255,255,255,0.95);}
+
+    /* sections */
+    .section{ display:none; text-align:left; }
+    .section.active{ display:block; }
+    .section .box{
+      border:1px solid rgba(34,34,34,0.18);
+      background:rgba(255,255,255,0.65);
+      border-radius:14px;
+      padding:18px;
     }
 
-    h1 {
-      font-size: 36px;
-      margin: 0 0 10px;
-    }
-
-    p.tagline {
-      font-size: 16px;
-      margin: 0 0 40px;
-      opacity: 0.85;
-      line-height: 1.5;
-    }
-
-    a.button {
-      display: block;
-      text-decoration: none;
-      border: 2px solid #222;
-      padding: 16px;
-      margin: 16px 0;
-      border-radius: 12px;
-      font-size: 18px;
-      color: #222;
-      background: rgba(255,255,255,0.75);
-    }
-
-    a.button:hover {
-      background: rgba(255,255,255,0.95);
-    }
-
-    .contact {
-      margin-top: 40px;
-      font-size: 14px;
-    }
-
-    .contact a {
-      color: #222;
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 48px;
-      font-size: 12px;
-      opacity: 0.6;
-    }
+    .contact{margin-top:28px;font-size:14px;text-align:center;}
+    .contact a{color:#222;text-decoration:underline;}
+    footer{margin-top:42px;font-size:12px;opacity:.6;text-align:center;}
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
-    <!-- Logo -->
     <img src="ondesmarines_logo.png" alt="Ondesmarines Records" class="logo" />
 
     <h1>Ondesmarines Records</h1>
-
     <p class="tagline">
-      A single current platform hosting multiple artists,
-      curated by Yuri Afasia.
+      A single current platform hosting multiple artists, curated by Yuri Afasia.
     </p>
 
-    <a class="button" href="https://ondesmarinesrecords.bandcamp.com/music" target="_blank" rel="noopener">
-      Bandcamp
-    </a>
-
-    <a class="button" href="https://medium.com/@gongdeyuri364" target="_blank" rel="noopener">
-      Blog
-    </a>
-
-    <a class="button" href="https://medium.com/@gongdeyuri364/artists-05ffca4c1158" target="_blank" rel="noopener">
-      Artists
-    </a>
-
-    <a class="button" href="https://linktr.ee/Yuriafasia" target="_blank" rel="noopener">
-      Linktree
-    </a>
-
-    <div class="contact">
-      Contact:
-      <a href="mailto:gongdeyuri364@gmail.com">gongdeyuri364@gmail.com</a>
+    <!-- Menu (no page jump) -->
+    <div class="menu" role="tablist" aria-label="Site menu">
+      <button class="active" data-target="links">LINKS</button>
+      <button data-target="artists">ARTISTS</button>
+      <button data-target="videos">VIDEOS</button>
+      <button data-target="about">ABOUT</button>
+      <button data-target="contact">CONTACT</button>
     </div>
 
-    <footer>
-      © Ondesmarines Records
-    </footer>
+    <!-- Sections (content swaps below) -->
+    <div id="links" class="section active">
+      <div class="box">
+        <a class="button" href="https://ondesmarinesrecords.bandcamp.com/music" target="_blank" rel="noopener">Bandcamp</a>
+        <a class="button" href="https://medium.com/@gongdeyuri364" target="_blank" rel="noopener">Blog</a>
+        <a class="button" href="https://linktr.ee/Yuriafasia" target="_blank" rel="noopener">Linktree</a>
+      </div>
+    </div>
 
+    <div id="artists" class="section">
+      <div class="box">
+        <p style="margin-top:0;">Artists page (opens in a new tab):</p>
+        <a class="button" href="https://medium.com/@gongdeyuri364/artists-05ffca4c1158" target="_blank" rel="noopener">
+          Artists (Medium)
+        </a>
+        <p style="opacity:.8; margin-bottom:0;">
+          Later, we can replace this with your own artist cards (photos + short bios) inside this page.
+        </p>
+      </div>
+    </div>
+
+    <div id="videos" class="section">
+      <div class="box">
+        <p style="margin-top:0;">Put your video links here.</p>
+        <a class="button" href="#" onclick="return false;">YouTube (coming soon)</a>
+        <p style="opacity:.8; margin-bottom:0;">
+          If you send me your channel/playlist links, I can format them as a clean list that “flows” like the site you showed.
+        </p>
+      </div>
+    </div>
+
+    <div id="about" class="section">
+      <div class="box">
+        <p style="margin-top:0;">
+          Write your presence here—short, clear, and inevitable.
+        </p>
+      </div>
+    </div>
+
+    <div id="contact" class="section">
+      <div class="box" style="text-align:center;">
+        <div class="contact">
+          Contact: <a href="mailto:gongdeyuri364@gmail.com">gongdeyuri364@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>© Ondesmarines Records</footer>
   </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".menu button");
+    const sections = document.querySelectorAll(".section");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const targetId = btn.dataset.target;
+        sections.forEach(sec => sec.classList.remove("active"));
+        document.getElementById(targetId).classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
